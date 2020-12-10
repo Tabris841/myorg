@@ -45,6 +45,13 @@
     "shell-e2e": {
       "tags": [],
       "implicitDependencies": ["shell"]
+    },
+    "mfe1": {
+      "tags": []
+    },
+    "mfe1-e2e": {
+      "tags": [],
+      "implicitDependencies": ["mfe1"]
     }
   }
 }

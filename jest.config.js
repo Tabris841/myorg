@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/data',
     '<rootDir>/libs/ui',
     '<rootDir>/apps/shell',
+    '<rootDir>/apps/mfe1',
   ],
 };
