@@ -17,13 +17,8 @@
             "polyfills": "apps/todos/src/polyfills.ts",
             "tsConfig": "apps/todos/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/todos/src/favicon.ico",
-              "apps/todos/src/assets"
-            ],
-            "styles": [
-              "apps/todos/src/styles.css"
-            ],
+            "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
+            "styles": ["apps/todos/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -77,9 +72,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/todos/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/todos/src/**/*.ts"]
           }
         },
         "test": {
@@ -112,9 +105,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/todos-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/todos-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -132,9 +123,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -159,9 +148,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
@@ -182,9 +169,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/data/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/data/**/*.ts"]
           }
         },
         "test": {
@@ -205,9 +190,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/ui/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/ui/src/**/*.ts"]
           }
         },
         "test": {
@@ -236,13 +219,8 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/shell/src/favicon.ico",
-              "apps/shell/src/assets"
-            ],
-            "styles": [
-              "apps/shell/src/styles.css"
-            ],
+            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+            "styles": ["apps/shell/src/styles.css"],
             "scripts": [],
             "extraWebpackConfig": "apps/shell/webpack.config.js"
           },
@@ -282,6 +260,7 @@
           "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "shell:build",
+            "proxyConfig": "apps/todos/proxy.conf.json",
             "extraWebpackConfig": "apps/shell/webpack.config.js",
             "port": 4200
           },
@@ -301,9 +280,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/shell/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/shell/src/**/*.ts"]
           }
         },
         "test": {
@@ -337,9 +314,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/shell-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/shell-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -360,13 +335,8 @@
             "polyfills": "apps/mfe1/src/polyfills.ts",
             "tsConfig": "apps/mfe1/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/mfe1/src/favicon.ico",
-              "apps/mfe1/src/assets"
-            ],
-            "styles": [
-              "apps/mfe1/src/styles.css"
-            ],
+            "assets": ["apps/mfe1/src/favicon.ico", "apps/mfe1/src/assets"],
+            "styles": ["apps/mfe1/src/styles.css"],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe1/webpack.config.js"
           },
@@ -424,9 +394,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/mfe1/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/mfe1/src/**/*.ts"]
           }
         },
         "test": {
@@ -460,9 +428,121 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/mfe1-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/mfe1-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "mfe2": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/mfe2",
+      "sourceRoot": "apps/mfe2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/apps/mfe2",
+            "index": "apps/mfe2/src/index.html",
+            "main": "apps/mfe2/src/main.ts",
+            "polyfills": "apps/mfe2/src/polyfills.ts",
+            "tsConfig": "apps/mfe2/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/mfe2/src/favicon.ico", "apps/mfe2/src/assets"],
+            "styles": ["apps/mfe2/src/styles.css"],
+            "scripts": [],
+            "extraWebpackConfig": "apps/mfe2/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mfe2/src/environments/environment.ts",
+                  "with": "apps/mfe2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "extraWebpackConfig": "apps/mfe2/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "mfe2:build",
+            "extraWebpackConfig": "apps/mfe2/webpack.config.js",
+            "port": 3001
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mfe2:build:production",
+              "extraWebpackConfig": "apps/mfe2/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mfe2:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mfe2/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "jestConfig": "apps/mfe2/jest.config.js",
+            "passWithNoTests": true,
+            "extraWebpackConfig": "apps/mfe2/webpack.config.js"
+          }
+        }
+      }
+    },
+    "mfe2-e2e": {
+      "root": "apps/mfe2-e2e",
+      "sourceRoot": "apps/mfe2-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mfe2-e2e/cypress.json",
+            "tsConfig": "apps/mfe2-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mfe2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mfe2:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mfe2-e2e/**/*.{js,ts}"]
           }
         }
       }

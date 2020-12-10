@@ -1,9 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { Todo } from '@myorg/data';
+import { Microfrontend, Todo } from '@myorg/data';
 
 @Injectable()
 export class AppService {
   todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
+  shellRoutes: Microfrontend[] = [
+    {
+      // For Loading
+      remoteEntry: 'http://localhost:3000/remoteEntry.js',
+      remoteName: 'mfe1',
+      exposedModule: './Module',
+
+      // For Routing
+      displayName: 'Flights',
+      routePath: 'flights',
+      ngModuleName: 'FlightsModule',
+    },
+    {
+      // For Loading
+      remoteEntry: 'http://localhost:3001/remoteEntry.js',
+      remoteName: 'mfe2',
+      exposedModule: './Module',
+
+      // For Routing
+      displayName: 'Bookings',
+      routePath: 'bookings',
+      ngModuleName: 'BookingsModule',
+    },
+  ];
 
   getData(): Todo[] {
     return this.todos;
@@ -13,5 +37,9 @@ export class AppService {
     this.todos.push({
       title: `New todo ${Math.floor(Math.random() * 1000)}`,
     });
+  }
+
+  getShellRoutes() {
+    return this.shellRoutes;
   }
 }

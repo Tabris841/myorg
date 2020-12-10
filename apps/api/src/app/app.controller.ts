@@ -15,4 +15,9 @@ export class AppController {
   addTodo() {
     return this.appService.addTodo();
   }
+
+  @Get('shell-routes')
+  getShellRoutes() {
+    return this.appService.getShellRoutes();
+  }
 }

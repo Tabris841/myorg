@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
-import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ConfigComponent } from './config/config.component';
+import { BookingsModule } from './bookings/bookings.module';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ConfigComponent],
-  imports: [BrowserModule, RouterModule.forRoot(APP_ROUTES), HttpClientModule],
+  declarations: [AppComponent, HomeComponent],
+  imports: [BrowserModule, BookingsModule, RouterModule.forRoot(APP_ROUTES)],
   providers: [],
   bootstrap: [AppComponent],
 })

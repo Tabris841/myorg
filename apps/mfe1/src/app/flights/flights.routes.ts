@@ -3,6 +3,11 @@ import { FlightsSearchComponent } from './flights-search/flights-search.componen
 
 export const FLIGHTS_ROUTES: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'flights-search',
+  },
+  {
     path: 'flights-search',
     component: FlightsSearchComponent,
   },

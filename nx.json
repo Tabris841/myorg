@@ -52,6 +52,13 @@
     "mfe1-e2e": {
       "tags": [],
       "implicitDependencies": ["mfe1"]
+    },
+    "mfe2": {
+      "tags": []
+    },
+    "mfe2-e2e": {
+      "tags": [],
+      "implicitDependencies": ["mfe2"]
     }
   }
 }

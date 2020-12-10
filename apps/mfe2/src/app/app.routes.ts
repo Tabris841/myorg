@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-
-import { ConfigComponent } from './config/config.component';
 import { HomeComponent } from './home/home.component';
 
 export const APP_ROUTES: Routes = [
@@ -10,7 +8,8 @@ export const APP_ROUTES: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'config',
-    component: ConfigComponent,
+    path: 'bookings',
+    loadChildren: () =>
+      import('./bookings/bookings.module').then((m) => m.BookingsModule),
   },
 ];

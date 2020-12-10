@@ -9,14 +9,7 @@ import { FlightsModule } from './flights/flights.module';
 
 @NgModule({
   declarations: [HomeComponent, AppComponent],
-  imports: [
-    BrowserModule,
-    FlightsModule,
-    RouterModule.forRoot(APP_ROUTES, {
-      initialNavigation: 'enabled',
-      relativeLinkResolution: 'legacy',
-    }),
-  ],
+  imports: [BrowserModule, FlightsModule, RouterModule.forRoot(APP_ROUTES)],
   providers: [],
   bootstrap: [AppComponent],
 })
