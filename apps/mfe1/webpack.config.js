@@ -9,7 +9,7 @@ sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
 
 module.exports = {
   output: {
-    uniqueName: 'shell',
+    uniqueName: 'mfe1',
     chunkFilename: '[name]-[contenthash].js',
   },
   optimization: {
@@ -18,8 +18,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {
-        mfe1: 'mfe1@http://localhost:3000/remoteEntry.js',
+      name: 'mfe1',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Module': './apps/mfe1/src/app/flights/flights.module.ts',
       },
 
       shared: {

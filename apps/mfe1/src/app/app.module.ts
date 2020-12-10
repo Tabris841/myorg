@@ -5,12 +5,17 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { APP_ROUTES } from './app.routes';
+import { FlightsModule } from './flights/flights.module';
 
 @NgModule({
   declarations: [HomeComponent, AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES, { initialNavigation: 'enabled' }),
+    FlightsModule,
+    RouterModule.forRoot(APP_ROUTES, {
+      initialNavigation: 'enabled',
+      relativeLinkResolution: 'legacy',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

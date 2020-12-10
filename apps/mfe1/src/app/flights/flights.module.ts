@@ -4,10 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { FlightsSearchComponent } from './flights-search/flights-search.component';
 import { FLIGHTS_ROUTES } from './flights.routes';
-import { AuthLibModule } from '@myorg/auth-lib';
 
 @NgModule({
-  imports: [CommonModule, AuthLibModule, RouterModule.forChild(FLIGHTS_ROUTES)],
+  imports: [CommonModule, RouterModule.forChild(FLIGHTS_ROUTES)],
   declarations: [FlightsSearchComponent],
 })
 export class FlightsModule {}
