@@ -11,7 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   declarations: [AppComponent, HomeComponent, NotFoundComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES, { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(APP_ROUTES, { initialNavigation: 'enabled', relativeLinkResolution: 'legacy' }),
   ],
   providers: [],
   bootstrap: [AppComponent],
