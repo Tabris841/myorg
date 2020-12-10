@@ -3,7 +3,7 @@ import { AuthLibService } from './auth-lib.service';
 
 @Component({
   selector: 'myorg-auth-lib',
-  template: ` <p>User: {{ user }}</p> `,
+  template: ` <p>Logged User: {{ user }}</p> `,
 })
 export class AuthLibComponent {
   user = this.service.user;

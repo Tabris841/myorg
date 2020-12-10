@@ -28,10 +28,11 @@ module.exports = {
         '@angular/core': { singleton: true, strictVersion: true },
         '@angular/common': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
+        '@myorg/auth-lib': { singleton: true },
 
-        ...sharedMappings.getDescriptors(),
+        // ...sharedMappings.getDescriptors(),
       },
     }),
-    sharedMappings.getPlugin(),
+    // sharedMappings.getPlugin(),
   ],
 };
