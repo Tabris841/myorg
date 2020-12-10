@@ -59,6 +59,9 @@
     "mfe2-e2e": {
       "tags": [],
       "implicitDependencies": ["mfe2"]
+    },
+    "auth-lib": {
+      "tags": []
     }
   }
 }

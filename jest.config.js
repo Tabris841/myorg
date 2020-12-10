@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/apps/shell',
     '<rootDir>/apps/mfe1',
     '<rootDir>/apps/mfe2',
+    '<rootDir>/libs/auth-lib',
   ],
 };
