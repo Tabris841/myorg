@@ -14,7 +14,6 @@
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
-    "affected:build:prod": "nx affected:build --prod",
     "affected:e2e": "nx affected:e2e",
     "affected:test": "nx affected:test",
     "affected:lint": "nx affected:lint",
@@ -29,7 +28,7 @@
     "help": "nx help",
     "pack-auth-lib": "cd dist/libs/auth-lib && npm pack",
     "commit": "cz",
-    "postversion": "nx build auth-lib --prod",
+    "postversion": "nx affected:build --prod",
     "publish:libs": "lerna publish"
   },
   "private": true,
