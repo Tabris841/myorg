@@ -28,7 +28,7 @@
     "help": "nx help",
     "pack-auth-lib": "cd dist/libs/auth-lib && npm pack",
     "commit": "cz",
-    "postversion": "nx affected:build --prod",
+    "version": "nx affected:build --prod",
     "publish:libs": "lerna publish"
   },
   "private": true,
