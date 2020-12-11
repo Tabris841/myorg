@@ -5,7 +5,7 @@ import {
   Injector,
   ComponentFactoryResolver,
 } from '@angular/core';
-import { AuthLibService } from '@myorg/auth-lib';
+import { AuthLibService } from '@tabris84/auth-lib';
 
 @Component({
   selector: 'app-flights-search',

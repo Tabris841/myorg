@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthLibService } from '@myorg/auth-lib';
+import { AuthLibService } from '@tabris84/auth-lib';
 import { Microfrontend } from '@myorg/data';
 
 import { LookupService } from './microfrontends/lookup.service';

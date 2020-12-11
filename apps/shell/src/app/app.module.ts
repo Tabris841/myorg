@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthLibModule } from '@myorg/auth-lib';
+import { AuthLibModule } from '@tabris84/auth-lib';
 
 import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';

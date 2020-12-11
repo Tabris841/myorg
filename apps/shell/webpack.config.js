@@ -26,7 +26,7 @@ module.exports = {
         '@angular/core': { singleton: true, strictVersion: true },
         '@angular/common': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
-        '@myorg/auth-lib': { singleton: true },
+        '@tabris84/auth-lib': { singleton: true, strictVersion: true },
 
         // ...sharedMappings.getDescriptors(),
       },

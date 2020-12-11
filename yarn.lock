@@ -1637,11 +1637,6 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
-"@myorg/auth-lib@file:.\\dist\\libs\\auth-lib\\":
-  version "0.0.1"
-  dependencies:
-    tslib "^2.0.0"
-
 "@nestjs/common@^7.0.0":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.5.5.tgz#9c8bfcbe32ef7768d87cb458084271f7e38cc32e"
@@ -1993,6 +1988,13 @@
   integrity sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@tabris84/auth-lib@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@tabris84/auth-lib/-/auth-lib-0.0.1.tgz#e88c1da4874ad4252d9fe15f4c8998d95545cfc0"
+  integrity sha512-PYhkvRDljjJkrlG4kjXz4CI/la5+1C2bpp+yluj9mNoclzZBE5AkqNrrDs4N8FUzcAH12sJ+KW2WDhVItIJfUA==
+  dependencies:
+    tslib "^2.0.0"
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.12"
