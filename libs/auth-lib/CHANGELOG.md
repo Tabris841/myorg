@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.14](https://github.com/Tabris841/myorg/compare/@tabris84/auth-lib@0.0.13...@tabris84/auth-lib@0.0.14) (2020-12-11)
+
+**Note:** Version bump only for package @tabris84/auth-lib
+
+
+
+
+
 ## [0.0.13](https://github.com/Tabris841/myorg/compare/@tabris84/auth-lib@0.0.12...@tabris84/auth-lib@0.0.13) (2020-12-11)
 
 **Note:** Version bump only for package @tabris84/auth-lib
