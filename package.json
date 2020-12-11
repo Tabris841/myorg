@@ -32,6 +32,9 @@
     "publish:libs": "lerna publish"
   },
   "private": true,
+  "workspaces": [
+    "libs/*"
+  ],
   "resolutions": {
     "webpack": "^5.0.0"
   },
