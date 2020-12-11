@@ -35,9 +35,6 @@
   "workspaces": [
     "libs/*"
   ],
-  "resolutions": {
-    "webpack": "^5.0.0"
-  },
   "dependencies": {
     "@angular-architects/module-federation": "^1.2.2",
     "@angular/animations": "^11.0.4",
