@@ -9,7 +9,7 @@
       "yes": true
     },
     "version": {
-      "amend": true
+      "message": "chore(release): publish %s"
     }
   }
 }
