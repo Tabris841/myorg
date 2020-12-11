@@ -1,6 +1,6 @@
 {
-  "name": "myorg",
-  "version": "0.0.0",
+  "name": "tabris84",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "nx",

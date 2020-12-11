@@ -1,5 +1,5 @@
 {
-  "npmScope": "@tabris84",
+  "npmScope": "myorg",
   "affected": {
     "defaultBase": "main"
   },
