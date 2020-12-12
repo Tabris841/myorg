@@ -72,7 +72,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/todos/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/todos/src/**/*.ts",
+              "apps/todos/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -190,7 +193,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/src/**/*.ts"]
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
           }
         },
         "test": {
@@ -280,7 +283,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/shell/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/shell/src/**/*.ts",
+              "apps/shell/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -394,7 +400,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/mfe1/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/mfe1/src/**/*.ts",
+              "apps/mfe1/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -508,7 +517,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/mfe2/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/mfe2/src/**/*.ts",
+              "apps/mfe2/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -568,7 +580,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/auth-lib/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/auth-lib/src/**/*.ts",
+              "libs/auth-lib/src/**/*.html"
+            ]
           }
         },
         "test": {
