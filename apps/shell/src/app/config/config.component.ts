@@ -4,7 +4,7 @@ import { Microfrontend } from '@myorg/data';
 import { LookupService } from '../microfrontends/lookup.service';
 
 @Component({
-  selector: 'app-config',
+  selector: 'shell-config',
   templateUrl: './config.component.html',
 })
 export class ConfigComponent implements OnInit {

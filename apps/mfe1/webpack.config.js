@@ -21,7 +21,7 @@ module.exports = {
       name: 'mfe1',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': './apps/mfe1/src/app/flights/flights.module.ts',
+        './FlightsModule': './apps/mfe1/src/app/flights/flights.module.ts',
       },
 
       shared: {

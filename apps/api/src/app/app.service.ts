@@ -8,8 +8,9 @@ export class AppService {
     {
       // For Loading
       remoteEntry: 'http://localhost:3000/remoteEntry.js',
+      // remoteEntry: 'http://localhost:3333/mfe1/remoteEntry.js',
       remoteName: 'mfe1',
-      exposedModule: './Module',
+      exposedModule: './FlightsModule',
 
       // For Routing
       displayName: 'Flights',
