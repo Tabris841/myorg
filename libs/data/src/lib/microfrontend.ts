@@ -1,7 +1,8 @@
 import { LoadRemoteModuleOptions } from '@angular-architects/module-federation';
 
 export type Microfrontend = LoadRemoteModuleOptions & {
-    displayName: string;
-    routePath: string;
-    ngModuleName: string;
+  displayName: string;
+  routePath: string;
+  ngModuleName: string;
+  scope: string;
 };

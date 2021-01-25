@@ -18,3 +18,13 @@
     <ng-container #vc></ng-container>
   </div>
 </div>
+
+<h2>Predefined Routes</h2>
+<a routerLink="lazy">I AM LAZY</a>
+
+<h2>Dynamic Routes</h2>
+<div *ngFor="let mfe of microfrontends">
+  <a [routerLink]="mfe.routePath">{{ mfe.displayName }}</a>
+</div>
+
+<router-outlet></router-outlet>

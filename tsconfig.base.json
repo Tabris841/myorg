@@ -18,7 +18,8 @@
     "paths": {
       "@myorg/data": ["libs/data/src/index.ts"],
       "@myorg/ui": ["libs/ui/src/index.ts"],
-      "@myorg/auth-lib": ["libs/auth-lib/src/index.ts"]
+      "@myorg/auth-lib": ["libs/auth-lib/src/index.ts"],
+      "@myorg/route-lib": ["libs/route-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

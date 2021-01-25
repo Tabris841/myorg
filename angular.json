@@ -9,7 +9,7 @@
       "prefix": "myorg",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/apps/todos",
             "index": "apps/todos/src/index.html",
@@ -17,9 +17,15 @@
             "polyfills": "apps/todos/src/polyfills.ts",
             "tsConfig": "apps/todos/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
-            "styles": ["apps/todos/src/styles.css"],
-            "scripts": []
+            "assets": [
+              "apps/todos/src/favicon.ico",
+              "apps/todos/src/assets"
+            ],
+            "styles": [
+              "apps/todos/src/styles.css"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "apps/todos/webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -47,19 +53,23 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "extraWebpackConfig": "apps/todos/webpack.prod.config.js"
             }
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "todos:build",
-            "proxyConfig": "apps/todos/proxy.conf.json"
+            "proxyConfig": "apps/todos/proxy.conf.json",
+            "extraWebpackConfig": "apps/todos/webpack.config.js",
+            "port": 3002
           },
           "configurations": {
             "production": {
-              "browserTarget": "todos:build:production"
+              "browserTarget": "todos:build:production",
+              "extraWebpackConfig": "apps/todos/webpack.prod.config.js"
             }
           }
         },
@@ -79,10 +89,11 @@
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "jestConfig": "apps/todos/jest.config.js",
-            "passWithNoTests": true
+            "passWithNoTests": true,
+            "extraWebpackConfig": "apps/todos/webpack.config.js"
           }
         }
       }
@@ -108,7 +119,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/todos-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/todos-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -126,7 +139,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -151,7 +166,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -172,7 +189,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/data/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/data/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -193,7 +212,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
+            "lintFilePatterns": [
+              "libs/ui/src/**/*.ts",
+              "libs/ui/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -222,8 +244,13 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-            "styles": ["apps/shell/src/styles.css"],
+            "assets": [
+              "apps/shell/src/favicon.ico",
+              "apps/shell/src/assets"
+            ],
+            "styles": [
+              "apps/shell/src/styles.css"
+            ],
             "scripts": [],
             "extraWebpackConfig": "apps/shell/webpack.config.js"
           },
@@ -320,7 +347,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/shell-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/shell-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -341,8 +370,13 @@
             "polyfills": "apps/mfe1/src/polyfills.ts",
             "tsConfig": "apps/mfe1/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/mfe1/src/favicon.ico", "apps/mfe1/src/assets"],
-            "styles": ["apps/mfe1/src/styles.css"],
+            "assets": [
+              "apps/mfe1/src/favicon.ico",
+              "apps/mfe1/src/assets"
+            ],
+            "styles": [
+              "apps/mfe1/src/styles.css"
+            ],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe1/webpack.config.js"
           },
@@ -437,7 +471,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/mfe1-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/mfe1-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -458,8 +494,13 @@
             "polyfills": "apps/mfe2/src/polyfills.ts",
             "tsConfig": "apps/mfe2/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/mfe2/src/favicon.ico", "apps/mfe2/src/assets"],
-            "styles": ["apps/mfe2/src/styles.css"],
+            "assets": [
+              "apps/mfe2/src/favicon.ico",
+              "apps/mfe2/src/assets"
+            ],
+            "styles": [
+              "apps/mfe2/src/styles.css"
+            ],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe2/webpack.config.js"
           },
@@ -554,7 +595,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/mfe2-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/mfe2-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -595,6 +638,45 @@
         }
       },
       "schematics": {}
+    },
+    "route-lib": {
+      "projectType": "library",
+      "root": "libs/route-lib",
+      "sourceRoot": "libs/route-lib/src",
+      "prefix": "myorg",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/route-lib/tsconfig.lib.json",
+            "project": "libs/route-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/route-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/route-lib/src/**/*.ts",
+              "libs/route-lib/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/route-lib"
+          ],
+          "options": {
+            "jestConfig": "libs/route-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -621,6 +703,9 @@
     "@nrwl/angular:library": {
       "unitTestRunner": "jest",
       "strict": true
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
     }
   },
   "defaultProject": "shell"

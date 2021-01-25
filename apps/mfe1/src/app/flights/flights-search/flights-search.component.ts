@@ -4,8 +4,11 @@ import {
   ViewContainerRef,
   Injector,
   ComponentFactoryResolver,
+  OnInit,
 } from '@angular/core';
 import { AuthLibService } from '@tabris84/auth-lib';
+import { RouteBuilderService } from '@myorg/route-lib';
+import { Microfrontend } from '@myorg/data';
 
 @Component({
   selector: 'app-flights-search',
@@ -47,18 +50,27 @@ import { AuthLibService } from '@tabris84/auth-lib';
     `,
   ],
 })
-export class FlightsSearchComponent {
+export class FlightsSearchComponent implements OnInit {
+  private readonly moduleScope = 'Flights';
+
   @ViewChild('vc', { read: ViewContainerRef, static: true })
   viewContainer!: ViewContainerRef;
 
   user = this.service.user;
+  microfrontends: Microfrontend[] = [];
 
   constructor(
     private service: AuthLibService,
     private injector: Injector,
-    private cfr: ComponentFactoryResolver
+    private cfr: ComponentFactoryResolver,
+    private routeBuilderService: RouteBuilderService
   ) {}
 
+  ngOnInit(): void {
+    this.microfrontends = this.routeBuilderService.microfrontends.filter(
+      (o) => o.scope === this.moduleScope
+    );
+  }
   search() {
     alert('Not implemented for this demo!');
   }

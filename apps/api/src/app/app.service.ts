@@ -16,6 +16,7 @@ export class AppService {
       displayName: 'Flights',
       routePath: 'flights',
       ngModuleName: 'FlightsModule',
+      scope: 'Shell',
     },
     {
       // For Loading
@@ -27,6 +28,19 @@ export class AppService {
       displayName: 'Bookings',
       routePath: 'bookings',
       ngModuleName: 'BookingsModule',
+      scope: 'Shell',
+    },
+    {
+      // For Loading
+      remoteEntry: 'http://localhost:3002/remoteEntry.js',
+      remoteName: 'todo',
+      exposedModule: './Module',
+
+      // For Routing
+      displayName: 'Todos',
+      routePath: 'todos',
+      ngModuleName: 'TodoModule',
+      scope: 'Flights',
     },
   ];
 

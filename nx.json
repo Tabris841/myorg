@@ -62,6 +62,9 @@
     },
     "auth-lib": {
       "tags": []
+    },
+    "route-lib": {
+      "tags": []
     }
   }
 }

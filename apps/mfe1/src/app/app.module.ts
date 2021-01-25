@@ -1,15 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { APP_ROUTES } from './app.routes';
-import { FlightsModule } from './flights/flights.module';
+import { DownloadComponent } from './download/download.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
-  declarations: [HomeComponent, AppComponent],
-  imports: [BrowserModule, FlightsModule, RouterModule.forRoot(APP_ROUTES)],
+  declarations: [
+    HomeComponent,
+    AppComponent,
+    DownloadComponent,
+    UploadComponent,
+  ],
+  imports: [BrowserModule, RouterModule.forRoot(APP_ROUTES)],
   providers: [],
   bootstrap: [AppComponent],
 })

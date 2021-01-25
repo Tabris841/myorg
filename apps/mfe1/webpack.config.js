@@ -4,7 +4,8 @@ const path = require('path');
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
-  '@myorg/auth-lib',
+  // '@myorg/auth-lib',
+  '@myorg/route-lib',
 ]);
 
 module.exports = {
@@ -22,6 +23,8 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './FlightsModule': './apps/mfe1/src/app/flights/flights.module.ts',
+        './Download': './apps/mfe1/src/app/download/download.component.ts',
+        './Upload': './apps/mfe1/src/app/upload/upload.component.ts',
       },
 
       shared: {
@@ -30,9 +33,9 @@ module.exports = {
         '@angular/router': { singleton: true, strictVersion: true },
         '@tabris84/auth-lib': { singleton: true, strictVersion: true },
 
-        // ...sharedMappings.getDescriptors(),
+        ...sharedMappings.getDescriptors(),
       },
     }),
-    // sharedMappings.getPlugin(),
+    sharedMappings.getPlugin(),
   ],
 };

@@ -4,13 +4,12 @@ const path = require('path');
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
-  // '@myorg/auth-lib',
-  '@myorg/route-lib',
+  /* mapped paths to share */
 ]);
 
 module.exports = {
   output: {
-    uniqueName: 'shell',
+    uniqueName: 'todos',
     chunkFilename: '[name]-[contenthash].js',
   },
   optimization: {
@@ -19,19 +18,30 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
+      // For remotes (please adjust)
+      name: 'todo',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Module': './apps/todos/src/app/todo/todo.module.ts',
+      },
+
+      // For hosts (please adjust)
       // remotes: {
-      //   mfe1: 'mfe1@http://localhost:3000/remoteEntry.js',
+      //     "api": "api@http://localhost:4200/remoteEntry.js",
+      //     "shell": "shell@http://localhost:4200/remoteEntry.js",
+      //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
+      //     "mfe2": "mfe2@http://localhost:3001/remoteEntry.js",
+
       // },
 
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
         '@angular/common': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
-        '@tabris84/auth-lib': { singleton: true, strictVersion: true },
 
-        ...sharedMappings.getDescriptors(),
+        // ...sharedMappings.getDescriptors()
       },
     }),
-    sharedMappings.getPlugin(),
+    // sharedMappings.getPlugin(),
   ],
 };
