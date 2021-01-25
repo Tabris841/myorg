@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Microfrontend } from '@myorg/data';
 
-import { LookupService } from '../microfrontends/lookup.service';
+import { LookupService } from '../services/lookup.service';
 
 @Component({
   selector: 'shell-config',
@@ -13,6 +13,6 @@ export class ConfigComponent implements OnInit {
   constructor(private lookupService: LookupService) {}
 
   async ngOnInit() {
-    this.config = await this.lookupService.lookup();
+    this.config = await this.lookupService.fetchModules();
   }
 }

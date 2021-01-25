@@ -1,3 +1,28 @@
 <h1>Welcome!</h1>
 
 <myorg-auth-lib></myorg-auth-lib>
+
+<h2>Plugin-based Workflow Designer</h2>
+<button (click)="toggle()">Toggle Config</button>
+
+<div class="vertical-menu">
+  <h2>Tasks:</h2>
+  <button *ngFor="let p of plugins" (click)="add(p)" style="margin-right: 10px">
+    Add {{ p.displayName }}
+  </button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap">
+  <ng-container *ngFor="let p of workflow; let last = last">
+    <div style="position: relative; padding: 10px 30px 10px 10px">
+      <shell-plugin-proxy [options]="p"></shell-plugin-proxy>
+      <i *ngIf="!last" class="arrow right"></i>
+    </div>
+  </ng-container>
+</div>
+
+<p style="clear: both">&nbsp;</p>
+<p>&nbsp;</p>
+<pre *ngIf="showConfig" style="font-size:20px">
+  {{ pluginRepository.getPlugins() | json }}
+</pre>

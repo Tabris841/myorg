@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER, InjectionToken, NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthLibModule } from '@tabris84/auth-lib';
@@ -9,11 +9,17 @@ import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ConfigComponent } from './config/config.component';
-import { LookupService } from './microfrontends/lookup.service';
+import { LookupService } from './services/lookup.service';
 import { APP_CONFIG, AppConfig } from './app.config';
+import { PluginProxyComponent } from './plugin-proxy/plugin-proxy.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ConfigComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ConfigComponent,
+    PluginProxyComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
@@ -37,7 +43,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
         config: AppConfig
       ) => {
         return async () => {
-          routeBuilderService.microfrontends = await lookupService.lookup();
+          routeBuilderService.microfrontends = await lookupService.fetchModules();
 
           const routes = routeBuilderService.buildRoutes({
             appRoutes: APP_ROUTES,

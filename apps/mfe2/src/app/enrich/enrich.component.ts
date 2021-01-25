@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-download',
+  selector: 'app-enrich',
   template: `
     <div class="task">
       <img
-        src="http://localhost:3000/assets/download.png"
+        src="http://localhost:3001/assets/enrich.png"
         style="width: 240px; height: 193px"
       />
-      <p>Download</p>
+      <p>Enrich</p>
     </div>
   `,
 })
-export class DownloadComponent {}
+export class EnrichComponent {}

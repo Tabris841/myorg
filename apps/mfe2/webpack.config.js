@@ -21,7 +21,8 @@ module.exports = {
       name: 'mfe2',
       filename: 'remoteEntry.js',
       exposes: {
-        './Component': './apps/mfe2/src/app/app.component.ts',
+        './Analyze': './apps/mfe2/src/app/analyze/analyze.component.ts',
+        './Enrich': './apps/mfe2/src/app/enrich/enrich.component.ts',
         './Module': './apps/mfe2/src/app/bookings/bookings.module.ts',
       },
 

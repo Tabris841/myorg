@@ -1,7 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { AuthLibService } from '@tabris84/auth-lib';
 import { Microfrontend } from '@myorg/data';
 import { RouteBuilderService } from '@myorg/route-lib';
+
 import { APP_CONFIG, AppConfig } from './app.config';
 
 @Component({
@@ -44,7 +45,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
     `,
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   microfrontends: Microfrontend[] = [];
 
   constructor(

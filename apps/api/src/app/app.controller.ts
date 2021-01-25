@@ -16,8 +16,13 @@ export class AppController {
     return this.appService.addTodo();
   }
 
-  @Get('shell-routes')
+  @Get('modules')
   getShellRoutes() {
     return this.appService.getShellRoutes();
+  }
+
+  @Get('plugins')
+  getPlugins() {
+    return this.appService.getPlugins();
   }
 }
